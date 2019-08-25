@@ -1,0 +1,227 @@
+{
+    "_comment": "approximately according to https://openweathermap.org/weather-conditions",
+    "200": {
+        "label": "thunderstorm with light rain",
+        "icon": "Cloud & Lightning"
+    },
+    "201": {
+        "label": "thunderstorm with rain",
+        "icon": "Cloud & Lightning"
+    },
+    "202": {
+        "label": "thunderstorm with heavy rain",
+        "icon": "Cloud & Lightning"
+    },
+    "210": {
+        "label": "light thunderstorm",
+        "icon": "Lightning"
+    },
+    "211": {
+        "label": "thunderstorm",
+        "icon": "Lightning"
+    },
+    "212": {
+        "label": "heavy thunderstorm",
+        "icon": "Lightning"
+    },
+    "221": {
+        "label": "ragged thunderstorm",
+        "icon": "Lightning"
+    },
+    "230": {
+        "label": "thunderstorm with light drizzle",
+        "icon": "Cloud & Lightning"
+    },
+    "231": {
+        "label": "thunderstorm with drizzle",
+        "icon": "Cloud & Lightning"
+    },
+    "232": {
+        "label": "thunderstorm with heavy drizzle",
+        "icon": "Cloud & Lightning"
+    },
+    "300": {
+        "label": "light intensity drizzle",
+        "icon": "Rain"
+    },
+    "301": {
+        "label": "drizzle",
+        "icon": "Rain"
+    },
+    "302": {
+        "label": "heavy intensity drizzle",
+        "icon": "Rain"
+    },
+    "310": {
+        "label": "light intensity drizzle rain",
+        "icon": "Rain with Clouds"
+    },
+    "311": {
+        "label": "drizzle rain",
+        "icon": "Rain with Clouds"
+    },
+    "312": {
+        "label": "heavy intensity drizzle rain",
+        "icon": "Rain with Clouds"
+    },
+    "313": {
+        "label": "shower rain and drizzle",
+        "icon": "Rain with Clouds"
+    },
+    "314": {
+        "label": "heavy shower rain and drizzle",
+        "icon": "Rain with Clouds"
+    },
+    "321": {
+        "label": "shower drizzle",
+        "icon": "Rain with Clouds"
+    },
+    "500": {
+        "label": "light rain",
+        "icon": "Rain"
+    },
+    "501": {
+        "label": "moderate rain",
+        "icon": "Rain"
+    },
+    "502": {
+        "label": "heavy intensity rain",
+        "icon": "Rain"
+    },
+    "503": {
+        "label": "very heavy rain",
+        "icon": "Rain"
+    },
+    "504": {
+        "label": "extreme rain",
+        "icon": "Rain"
+    },
+    "511": {
+        "label": "freezing rain",
+        "icon": "Snow"
+    },
+    "520": {
+        "label": "light intensity shower rain",
+        "icon": "Rain with Clouds"
+    },
+    "521": {
+        "label": "shower rain",
+        "icon": "Rain with Clouds"
+    },
+    "522": {
+        "label": "heavy intensity shower rain",
+        "icon": "Rain with Clouds"
+    },
+    "531": {
+        "label": "ragged shower rain",
+        "icon": "Rain with Clouds"
+    },
+    "600": {
+        "label": "light snow",
+        "icon": "Snow"
+    },
+    "601": {
+        "label": "snow",
+        "icon": "Snow"
+    },
+    "602": {
+        "label": "heavy snow",
+        "icon": "Snow"
+    },
+    "611": {
+        "label": "sleet",
+        "icon": "Light Snow Rain"
+    },
+    "612": {
+        "label": "ragged shower rain",
+        "icon": "Light Snow Rain"
+    },
+    "613": {
+        "label": "ragged shower rain",
+        "icon": "Light Snow Rain"
+    },
+    "615": {
+        "label": "ragged shower rain",
+        "icon": "Heavy Snow Rain"
+    },
+    "616": {
+        "label": "ragged shower rain",
+        "icon": "Heavy Snow Rain"
+    },
+    "620": {
+        "label": "ragged shower rain",
+        "icon": "Heavy Snow Rain"
+    },
+    "621": {
+        "label": "ragged shower rain",
+        "icon": "Heavy Snow Rain"
+    },
+    "622": {
+        "label": "ragged shower rain",
+        "icon": "Heavy Snow Rain"
+    },
+    "701": {
+        "label": "mist",
+        "icon": ""
+    },
+    "711": {
+        "label": "smoke",
+        "icon": ""
+    },
+    "721": {
+        "label": "haze",
+        "icon": ""
+    },
+    "731": {
+        "label": "sand / dust whirls",
+        "icon": ""
+    },
+    "741": {
+        "label": "fog",
+        "icon": ""
+    },
+    "751": {
+        "label": "sand",
+        "icon": ""
+    },
+    "761": {
+        "label": "dust",
+        "icon": ""
+    },
+    "762": {
+        "label": "volcanic ash",
+        "icon": ""
+    },
+    "771": {
+        "label": "squalls",
+        "icon": ""
+    },
+    "781": {
+        "label": "tornado",
+        "icon": ""
+    },
+    "800": {
+        "label": "clear sky",
+        "icon": "Lighter Heat"
+    },
+    "801": {
+        "label": "few clouds: 11-25%",
+        "icon": "Sun Behind Clouds"
+    },
+    "802": {
+        "label": "scattered clouds: 25-50%",
+        "icon": "Cloud"
+    },
+    "803": {
+        "label": "broken clouds: 51-84%",
+        "icon": "Cloud With Outlined Cloud"
+    },
+    "804": {
+        "label": "overcast clouds: 85-100%",
+        "icon": "Cloud With Outlined Cloud"
+    },
+    "904": {
+        "label": "hot",
+        "icon": "Heavier Heat"
+    }
+}

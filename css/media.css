@@ -1,0 +1,8 @@
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: calc(62.5% - 2px);
+    }
+    body {
+        padding-top: 0;
+    }
+}
