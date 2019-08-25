@@ -7,7 +7,7 @@ const KELVIN_RATE = 273.15;
 const MAX_CITIES = 1;
 
 const ICONS_FOLDER_PATH = 'icons/';
-const ICON_FORMAT = '.png';
+const ICON_FORMAT = 'png';
 
 // api key is supposed to be stored in env vars
 const fetchCityWeather = function (city) {
@@ -29,7 +29,7 @@ const CityWeather = function (name, temp, icon, label) {
         return (this.temp - KELVIN_RATE).toFixed(0);
     }
     this.getIconPath = function () {
-        return `${ICONS_FOLDER_PATH}/${this.icon}${ICON_FORMAT}`;
+        return `${ICONS_FOLDER_PATH}/${this.icon}.${ICON_FORMAT}`;
     }
 }
 
