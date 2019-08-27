@@ -40,12 +40,17 @@ const WeatherViewModel = function () {
 
     this.isTermEmpty = function () {
         return this.term().length === 0;
-    }
+    };
 
     this.showErrorMessage = ko.observable(false);
-    this.hideErrorMessage = function () {
-        this.showErrorMessage(false);
-    }
+    this.hideErrorMessage = function (data, { type, keyCode }) {
+        const isClicked = type === 'click';
+        const isEnterPressed = type === 'keypress' && keyCode === 13;
+
+        if (isClicked || isEnterPressed) {
+            this.showErrorMessage(false);
+        }
+    };
 
     this.getCity = function () {
         const city = this.term();

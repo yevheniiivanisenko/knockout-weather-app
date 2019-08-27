@@ -20,7 +20,7 @@
   <section data-bind="if: showErrorMessage">
     <div class="error-message">
       <p>Cannot find weather data for<br /><span data-bind="text: term"></span></p>
-      <button data-bind="click: hideErrorMessage">OK</button>
+      <button data-bind="click: hideErrorMessage, event: { keypress: hideErrorMessage }, hasfocus: true">OK</button>
     </div>
   </section>
   <section data-bind="ifnot: showErrorMessage">
