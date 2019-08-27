@@ -26,7 +26,12 @@
   <section data-bind="ifnot: showErrorMessage">
     <div class="app">
       <form data-bind="submit: getCity">
-        <input type="text" placeholder="Enter city name..." data-bind="value: term">
+        <div class="form-search">
+          <input type="text" placeholder="Enter city name..." data-bind="value: term">
+          <!-- ko if: isLoading -->
+          <div class="loader"></div>
+          <!-- /ko -->
+        </div>
         <aside class="form-controls">
           <button type="submit">Get</button>
           <button type="button" data-bind="click: compareCities">Compare</button>

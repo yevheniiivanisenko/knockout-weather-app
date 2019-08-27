@@ -4,7 +4,7 @@ const API_URL = 'https://community-open-weather-map.p.rapidapi.com/weather';
 
 const KELVIN_RATE = 273.15;
 
-const MAX_CITIES = 1;
+const MAX_WEATHER_BOXES = 2;
 
 const ICONS_FOLDER_PATH = 'icons/';
 const ICON_FORMAT = 'png';
@@ -29,20 +29,22 @@ const CityWeather = function (name, temp, icon, label) {
         return (this.temp - KELVIN_RATE).toFixed(0);
     }
     this.getIconPath = function () {
-        return `${ICONS_FOLDER_PATH}/${this.icon}.${ICON_FORMAT}`;
+        return `${ICONS_FOLDER_PATH}${this.icon}.${ICON_FORMAT}`;
     }
 }
 
 const WeatherViewModel = function () {
     this.term = ko.observable("");
     this.cities = ko.observableArray();
+    this.isLoading = ko.observable(false);
+
+    this.isTermEmpty = function () {
+        return this.term().length === 0;
+    }
 
     this.showErrorMessage = ko.observable(false);
     this.hideErrorMessage = function () {
         this.showErrorMessage(false);
-    }
-    this.isTermEmpty = function () {
-        return this.term().length === 0;
     }
 
     this.getCity = function () {
@@ -53,6 +55,8 @@ const WeatherViewModel = function () {
             return;
         }
 
+        this.isLoading(true);
+
         fetchCityWeather(city)
             .then(({ name, main, weather }) => {
                 const icon = weatherIcons[weather[0].id].icon;
@@ -61,6 +65,7 @@ const WeatherViewModel = function () {
                 this.cities.removeAll();
                 this.cities.push(new CityWeather(name, main.temp, icon, label));
             }, () => this.showErrorMessage(true))
+            .finally(() => this.isLoading(false))
     }
     this.compareCities = function () {
         const city = this.term();
@@ -71,16 +76,25 @@ const WeatherViewModel = function () {
             return;
         }
 
+        if (cities && this.cities()[0].name === city) {
+            alert('Please enter another city to compare with');
+            return;
+        }
+
+        this.isLoading(true);
+
         fetchCityWeather(city)
             .then(({ name, main, weather }) => {
                 const icon = weatherIcons[weather[0].id].icon;
                 const label = weatherIcons[weather[0].id].label;
 
-                if (cities !== MAX_CITIES) {
-                    this.cities.removeAll();
+                if (cities === MAX_WEATHER_BOXES) {
+                    this.cities.pop();
                 }
+
                 this.cities.push(new CityWeather(name, main.temp, icon, label));
             }, () => this.showErrorMessage(true))
+            .finally(() => this.isLoading(false))
     }
 
     this.fadeIn = function (element) {

@@ -55,6 +55,13 @@ body {
     transition: 0.5s linear;
 }
 
+.form-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 .form-controls {
     display: flex;
     justify-content: space-between;
@@ -69,9 +76,9 @@ form {
 input {
     display: flex;
     align-self: center;
-    max-width: 38rem;
     width: 100%;
     height: 5.6rem;
+    margin: 0 auto;
     padding: 0 2rem;
     font-size: 2rem;
     border-radius: var(--border-radius);
@@ -83,7 +90,6 @@ input:focus {
 }
 
 input::placeholder {
-    text-align: center;
 }
 
 button {
@@ -103,6 +109,23 @@ button:hover {
 button:focus {
     outline: none;
 }
+
+.loader {
+    position: absolute;
+    right: 2rem;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--primary-color);
+    border-top: 2px solid var(--grey-color);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
 ul {
     list-style: none;
