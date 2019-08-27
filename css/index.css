@@ -89,9 +89,6 @@ input:focus {
     outline: none;
 }
 
-input::placeholder {
-}
-
 button {
     width: 100%;
     max-width: 24rem;
@@ -99,7 +96,6 @@ button {
     font-size: 2rem;
     border-radius: var(--border-radius);
     background-color: var(--secondary-color);
-    ;
 }
 
 button:hover {
