@@ -37,19 +37,10 @@ const WeatherViewModel = function () {
     this.term = ko.observable("");
     this.cities = ko.observableArray();
     this.isLoading = ko.observable(false);
+    this.showErrorMessage = ko.observable(false);
 
     this.isTermEmpty = function () {
         return this.term().length === 0;
-    };
-
-    this.showErrorMessage = ko.observable(false);
-    this.hideErrorMessage = function (data, { type, keyCode }) {
-        const isClicked = type === 'click';
-        const isEnterPressed = type === 'keypress' && keyCode === 13;
-
-        if (isClicked || isEnterPressed) {
-            this.showErrorMessage(false);
-        }
     };
 
     this.getCity = function () {
@@ -70,8 +61,9 @@ const WeatherViewModel = function () {
                 this.cities.removeAll();
                 this.cities.push(new CityWeather(name, main.temp, icon, label));
             }, () => this.showErrorMessage(true))
-            .finally(() => this.isLoading(false))
+            .finally(() => this.isLoading(false));
     }
+
     this.compareCities = function () {
         const city = this.term();
         const cities = this.cities().length;
@@ -99,8 +91,17 @@ const WeatherViewModel = function () {
 
                 this.cities.push(new CityWeather(name, main.temp, icon, label));
             }, () => this.showErrorMessage(true))
-            .finally(() => this.isLoading(false))
+            .finally(() => this.isLoading(false));
     }
+
+    this.hideErrorMessage = function (data, { type, keyCode }) {
+        const isClicked = type === 'click';
+        const isEnterPressed = type === 'keypress' && keyCode === 13;
+
+        if (isClicked || isEnterPressed) {
+            this.showErrorMessage(false);
+        }
+    };
 
     this.fadeIn = function (element) {
         $(element).hide();
