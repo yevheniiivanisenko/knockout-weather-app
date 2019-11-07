@@ -1,4 +1,9 @@
 import weatherIcons from './weatherIcons.json';
+import './css/variables.css';
+import './css/index.css';
+import './css/variables.css';
+
+const API = `https://community-open-weather-map.p.rapidapi.com/weather`;
 
 const KELVIN_RATE = 273.15;
 const MAX_WEATHER_BOXES = 2;
@@ -8,7 +13,7 @@ const ICON_FORMAT = 'png';
 
 const fetchCityWeather = function (city) {
     return axios
-        .get(`${process.env.API}?q=${city}`, {
+        .get(`${API}?q=${city}`, {
             headers: {
                 'x-rapidapi-host': process.env.API_HOST,
                 'x-rapidapi-key': process.env.API_KEY
