@@ -1,5 +1,7 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+require('dotenv').config();
 
 module.exports = {
     entry: './app.js',
@@ -14,6 +16,13 @@ module.exports = {
                 collapseWhitespace: true,
                 removeEmptyAttributes: true
             }
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                API: JSON.stringify(process.env.API),
+                API_HOST: JSON.stringify(process.env.API_HOST),
+                API_KEY: JSON.stringify(process.env.API_KEY)
+            }
         })
     ]
-}
+};
