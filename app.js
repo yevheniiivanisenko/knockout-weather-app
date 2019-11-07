@@ -1,4 +1,7 @@
 import weatherIcons from './weatherIcons.json';
+import './css/variables.css';
+import './css/index.css';
+import './css/variables.css';
 
 const KELVIN_RATE = 273.15;
 const MAX_WEATHER_BOXES = 2;
