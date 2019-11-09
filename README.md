@@ -2,9 +2,9 @@
 
 Simple weather application based on [Knockoutjs](https://knockoutjs.com/). 
 Application uses:
+  - [requirejs](https://requirejs.org/)
   - [JQuery](https://jquery.com/)
   - [Axios](https://github.com/axios/axios)
-  - [webpack](http://webpack.js.org) to bundle the app
   - https://rapidapi.com/community/api/open-weather-map as the source of weather data
 
 ## Development
@@ -13,7 +13,3 @@ Application uses:
 3. `npm start`
 
 > You can generate your Open Weather Map credentials on https://rapidapi.com/
-
-## Production
-1. `npm install`
-2. `npm run build`
