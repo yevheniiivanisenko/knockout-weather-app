@@ -4,47 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/media.css">
     <script data-main="app" src="lib/require.js"></script>
-    <title>Knockout Weather App</title>
+    <title>Image Search</title>
 </head>
 
 <body>
-<!-- ko if: showErrorMessage -->
-<div class="error-message">
-    <p>Cannot find weather data for<br /><span data-bind="text: term"></span></p>
-    <button data-bind="click: hideErrorMessage, event: { keypress: hideErrorMessage }, hasfocus: true">OK</button>
-</div>
-<!-- /ko -->
-<section data-bind="ifnot: showErrorMessage">
     <div class="app">
-        <form data-bind="submit: getCity">
-            <div class="form-search">
-                <input type="text" placeholder="Enter city name..." data-bind="value: term">
-                <!-- ko if: isLoading -->
-                <div class="loader"></div>
-                <!-- /ko -->
-            </div>
-            <aside class="form-controls">
-                <button type="submit">Get</button>
-                <button type="button" data-bind="click: compareCities">Compare</button>
-            </aside>
-        </form>
-        <ul data-bind="foreach: { data: cities, afterAdd: fadeIn }">
+        <div class="image-search">
+            <form data-bind="event: { submit: search }" id="image-search" enctype="multipart/form-data">
+                <div class="form-search">
+                    <input type="file" accept="image/*" id="file-input" required>
+                    <!-- ko if: isLoading -->
+                    <div class="loader"></div>
+                    <!-- /ko -->
+                </div>
+                <button>Upload</button>
+            </form>
+        </div>
+        <!-- ko if: images -->
+        <ul data-bind="foreach: images">
             <li>
-                <img data-bind="attr: { src: getIconPath(), alt: label }">
-                <aside>
-                    <h3 data-bind="text: name"></h3>
-                    <p data-bind="text: getCelsius() + ' °C'"></p>
-                </aside>
+                <a data-bind="attr: { href:  $parent.api + '/' + $data[1] }" target="_blank">
+                    <img data-bind="attr: { src: $parent.api + '/' + $data[1], alt: $data[1] }">
+                </a>
             </li>
         </ul>
+        <!-- /ko -->
     </div>
-</section>
 </body>
 
 </html>

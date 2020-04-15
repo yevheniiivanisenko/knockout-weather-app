@@ -8,7 +8,7 @@ requirejs.config({
     }
 });
 
-requirejs(['knockout', 'domReady', 'app/weather'], function (ko, domRady, weatherViewModel) {
+requirejs(['knockout', 'domReady', 'app/image-search'], function (ko, domRady, weatherViewModel) {
     domRady(function init() {
         ko.applyBindings(new weatherViewModel());
     });
